@@ -1,8 +1,8 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { Provider } from '@tarojs/mobx'
-import Index from './pages/index'
+import Home from './pages/home/home'
 
-import counterStore from './store/counter'
+import mainStore from './store/main'
 
 import './app.less'
 
@@ -13,11 +13,16 @@ import './app.less'
 // }
 
 const store = {
-  counterStore
+  mainStore
+}
+
+if (Taro.hideTabBar) {
+  Taro.hideTabBar(); // 隐藏默认tabbar
 }
 
 class App extends Component {
 
+  
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -27,17 +32,40 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/index/index'
+      'pages/home/home',
+      'pages/test/test',
+      'pages/share/share',
+      'pages/chat/chat',
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      list: [{
+        pagePath: 'pages/home/home',
+        text: '指北'
+      }, {
+        pagePath: 'pages/test/test',
+        text: '测试'
+      }, {
+        pagePath: 'pages/chat/chat',
+        text: '交流'
+      }, {
+        pagePath: 'pages/share/share',
+        text: '下载'
+      }]
     }
   }
-
-  componentDidMount () {}
+  componentWillMount() {
+    if (Taro.hideTabBar) {
+      Taro.hideTabBar(); // 隐藏默认tabbar
+    }
+  }
+  componentDidMount () {
+  }
 
   componentDidShow () {}
 
@@ -50,7 +78,7 @@ class App extends Component {
   render () {
     return (
       <Provider store={store}>
-        <Index />
+        <Home/>
       </Provider>
     )
   }

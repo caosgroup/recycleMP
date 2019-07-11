@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "recycleMP",
   "description": "recycle",
-  "appid": "touristappid",
+  "appid": "wx3340f864a779de06",
   "setting": {
     "urlCheck": true,
     "es6": false,
