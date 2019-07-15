@@ -22,3 +22,5 @@ declare const process: {
     [key: string]: any;
   }
 }
+
+declare const WXAPP_URL:string;

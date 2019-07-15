@@ -1,0 +1,39 @@
+.slider {
+  height: 100%;
+  background: #f8f8f8;
+  width: 160px;
+  position: absolute;
+  .sliderItem {
+    margin-bottom: 12px;
+    display: flex;
+    .sliderBorder {
+      border-left: 10px solid green;
+    }
+    .sliderLabel {
+      text-align: center;
+      height: 90px;
+      flex: 1;
+      position: relative;
+      .label {
+        z-index: 99;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        line-height: 90px;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .labelBg {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        transition: width 0.5s;
+      }
+    }
+  }
+}

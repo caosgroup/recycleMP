@@ -1,3 +1,5 @@
+const path = require('path');
+
 const config = {
   projectName: 'recycleMP',
   date: '2019-7-4',

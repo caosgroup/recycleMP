@@ -60,16 +60,14 @@ class Layout extends Component {
         {i.label}
       </View>
     })
-    return (
-      <View className='layout'>
-          <View className="content">
-            {this.props.children}
-          </View>
-        <View className="footer">
-          <View className="tabbar">{tabListDom}</View>
+    return  <View className='layout'>
+        <View className="content">
+          {this.props.children}
         </View>
+      <View className="footer">
+        <View className="tabbar">{tabListDom}</View>
       </View>
-    )
+    </View>
   }
 }
 

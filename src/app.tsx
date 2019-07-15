@@ -19,7 +19,6 @@ const store = {
 if (Taro.hideTabBar) {
   Taro.hideTabBar(); // 隐藏默认tabbar
 }
-
 class App extends Component {
 
   
@@ -36,6 +35,7 @@ class App extends Component {
       'pages/test/test',
       'pages/share/share',
       'pages/chat/chat',
+      'pages/search/search'
     ],
     window: {
       backgroundTextStyle: 'light',
